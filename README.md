@@ -1,39 +1,36 @@
-# Desafio Backend Frameworks
+Desafio Backend Frameworks
 
-Este repositório apresenta dois projetos back-end utilizando frameworks diferentes: Node.js com Express e Java com Spring Boot. O objetivo é demonstrar a organização em camadas seguindo o modelo MVC.
+Este repositório reúne dois projetos back-end desenvolvidos com tecnologias distintas: Node.js utilizando Express e Java com Spring Boot. O objetivo principal é demonstrar como aplicações podem ser organizadas em camadas seguindo o padrão MVC.
 
-## Estrutura dos Projetos
+Organização dos Projetos
+Node.js / Express
 
-### Node.js / Express
+No projeto desenvolvido em Node.js, a estrutura foi dividida em camadas:
 
-O projeto Node.js foi organizado com as seguintes camadas:
+models: responsáveis pela estrutura e manipulação dos dados.
+controllers: fazem o controle das requisições e respostas da aplicação.
+routes: definem os endpoints e direcionam as chamadas da API.
+Java / Spring Boot
 
-- models: responsável pela representação dos dados.
-- controllers: responsável por receber as requisições e controlar as respostas.
-- routes: responsável por definir as rotas da aplicação.
+Na aplicação construída com Spring Boot, a organização segue o padrão:
 
-### Java / Spring Boot
+models: representam as entidades do sistema.
+controllers: lidam com as requisições HTTP recebidas.
+services: concentram as regras de negócio.
+Diferenças entre Node.js/Express e Java/Spring Boot
 
-O projeto Spring Boot foi organizado com as seguintes camadas:
+O Express é um framework mais minimalista, que permite configuração rápida e maior liberdade na estruturação do projeto. Já o Spring Boot é mais completo desde o início, oferecendo uma estrutura mais rígida e padronizada.
 
-- models: representa as entidades do sistema.
-- controllers: recebe as requisições HTTP.
-- services: contém as regras de negócio da aplicação.
+Quanto à complexidade de código, aplicações em Node.js com Express geralmente exigem menos linhas para criar uma API simples. Em contrapartida, o Spring Boot possui maior quantidade de código inicial, mas compensa com organização e ferramentas já integradas, sendo mais indicado para sistemas maiores.
 
-## Comparação entre Node.js/Express e Java/Spring Boot
+No gerenciamento de dependências, o Node.js utiliza o npm com o arquivo package.json. Já o Spring Boot trabalha com Maven ou Gradle, configurando dependências por meio de arquivos como pom.xml ou build.gradle.
 
-O Express é mais simples e rápido para configurar, pois exige poucos arquivos e possui uma estrutura mais flexível. Já o Spring Boot possui uma configuração inicial mais robusta, com mais arquivos e padrões definidos.
+Fluxo entre as Camadas
 
-Em relação à verbosidade, o Node.js com Express possui menos código para iniciar uma API simples. O Spring Boot exige mais código, porém oferece uma organização mais padronizada e recursos prontos para aplicações maiores.
+Em uma arquitetura em camadas, as rotas recebem as solicitações do usuário e encaminham para os controllers. Os controllers processam essas solicitações e, quando necessário, utilizam services ou models para executar as regras e acessar os dados. Os models são responsáveis por representar a estrutura das informações da aplicação.
 
-Na gestão de dependências, o Node.js utiliza o npm e o arquivo package.json. O Spring Boot utiliza Maven ou Gradle, com dependências configuradas no pom.xml ou build.gradle.
+Essa separação de responsabilidades torna o sistema mais organizado, facilitando manutenção, testes e futuras melhorias.
 
-## Comunicação entre as Camadas
+Conclusão
 
-Em uma aplicação back-end organizada em camadas, as rotas recebem as requisições do usuário e encaminham para os controllers. Os controllers processam a requisição e chamam os services ou models quando necessário. Os models representam os dados da aplicação.
-
-Essa separação facilita a manutenção, organização e evolução do sistema, pois cada camada possui uma responsabilidade específica.
-
-## Conclusão
-
-A atividade mostra que diferentes frameworks podem seguir o mesmo princípio arquitetural. Tanto Express quanto Spring Boot permitem organizar uma aplicação em camadas, separando responsabilidades e tornando o código mais limpo e estruturado.
+Pode-se observar que diferentes frameworks podem seguir uma mesma arquitetura base. Tanto Express quanto Spring Boot permitem a construção de sistemas estruturados em camadas, o que contribui para um código mais organizado, escalável e de fácil manutenção.
